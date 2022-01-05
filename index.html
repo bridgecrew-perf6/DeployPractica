@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <title>Practica html</title>
+    <style>
+        tv-p{
+            border-radius: 15px;
+            height: 80vh;
+        }
+        iframe{
+            height: 80vh; width: 100%; border-radius: 20px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid bg-dark">
+        <header  class="navbar container navbar-light">
+            <a class="container navbar-brand text-white">
+                <img class="d-inline-block align-top" src="/a.jpg" style="width: 4.2rem; height: 4.2rem; border-radius: 50rem;">
+                U.E Luis Felipe Borja del Alcázar
+            </a>
+        </header>
+    </div>
+    <div class="container" style="height: 70vh;">
+        <div class="row mt-5">
+            <div class="col-md-6"  style="display: flex; justify-content: center; align-items: center;">
+                <p class="h1">Ubicada en San Luis</p>
+            </div>
+            <div class="col-md-6 container p-1">
+                <img src="/maxresdefault.jpg" style="height: auto; width: 100%; object-fit: cover; border-radius: 20px;">
+            </div>
+        </div>
+    </div>
+    <div class="container" style="margin-top: 5vw; height: 80vh;">
+        <div class="row bg-dark">
+            <h1 class="text-white text-center">Lee sobre nosotros</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-2 bg-dark" style="display: flex; align-items: center; justify-content: center; flex-direction:column;">
+                <ul class="text-white">
+                    <li onclick="link('ENCABEZADO.HTML')" class="btn btn-danger btn-lg my-2" style="width: 100%;">Incio</li>
+                    <li onclick="link('DESCRIPCION.HTML')" class="btn btn-danger btn-lg my-2"  style="width: 100%;">Descipción</li>
+                    <li onclick="link('CONTENIDO.HTML')" class="btn btn-danger btn-lg my-2" style="width: 100%;">Contenido</li>
+                </ul>
+                <div class="bg-danger" id="s" style="margin-top: 5rem; border-radius: 100%; width: 6rem; height: 6rem; display: flex; align-items: center; justify-content: center;">
+                    <img src="/turn-off-svgrepo-com.svg" style="width: 50%; height: 50%;">
+                </div>
+            </div>
+            <div class="col-md-10 bg-dark" style="height: 80vh;">
+                <div id="tv-p" style="overflow: hidden;">
+                    <iframe id="iframe" src="fondo.html"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const tvP = document.getElementById('tv-p');
+        const iframe = document.getElementById('iframe')
+        iframe.classList.add(...['btn-dark']);
+        function link(link){
+            iframe.src=link;
+            tvP.appendChild(iframe);
+        }
+        const ap = document.getElementById('s');
+        ap.addEventListener('click',()=>{
+            const audio = new Audio('e.mp3');
+            audio.play();
+            iframe.src = "";
+            iframe.style.backgroundColor = "#000";
+        });
+    </script>
+</body>
+</html>
